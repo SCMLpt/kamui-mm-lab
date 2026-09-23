@@ -25,3 +25,8 @@ This is a research prototype inspired by inventory-aware market-making concepts,
 ## Limits
 
 Synthetic prices and fill decisions omit venue latency, queue priority, gas, MEV, funding, counterparty risk, outages, and exchange-specific fee schedules. There is no claim that the learned signal generalizes to real markets. A real-money service would need separate legal, operational, security, and venue work.
+
+
+## Stacks sBTC risk-data proof of concept
+
+Run `node stacks-risk-cli.js --limit=100` to fetch the public sBTC token supply and top holder balances from Hiro’s Stacks mainnet API. The script reports raw top-1, top-10 and top-25 principal shares using integer arithmetic, flags contract principals, and sends no orders or transactions. No wallet, private key or paid API is needed. On 2026-09-23, a 100-holder snapshot found 7,693 reported holders and top-10 principal share of 92.82%. This is address/contract distribution, not beneficial ownership, DEX liquidity or realized market-making performance; the API calls are not an atomic chain-height snapshot. The tool is an early component of a proposed public Stacks liquidity-risk study.
