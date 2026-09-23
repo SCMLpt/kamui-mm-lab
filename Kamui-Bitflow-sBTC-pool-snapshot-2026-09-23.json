@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-09-23T09:07:44.453Z",
+  "source": "Bitflow public /ticker endpoint",
+  "sBtcPoolCount": 7,
+  "sumOfReportedPoolLiquidityUsd": 236984.57,
+  "pools": [
+    {
+      "poolId": "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.stableswap-pool-sbtc-pbtc-v-1-1",
+      "pair": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token / SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-pBTC",
+      "reportedLiquidityUsd": 147390.8922044,
+      "baseVolume24h": 0.00004609,
+      "lastTradeTime": "2026-09-23T02:18:26.000Z",
+      "lastTradeAgeHours": 6.82,
+      "reportedBidAskSpreadBps": null
+    },
+    {
+      "poolId": "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-stx-v-1-1",
+      "pair": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token / Stacks",
+      "reportedLiquidityUsd": 78045.92112580099,
+      "baseVolume24h": 0.03953123999999999,
+      "lastTradeTime": "2026-09-23T06:17:25.000Z",
+      "lastTradeAgeHours": 2.84,
+      "reportedBidAskSpreadBps": null
+    },
+    {
+      "poolId": "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-droid-v-1-1",
+      "pair": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token / SP2EEV5QBZA454MSMW9W3WJNRXVJF36VPV17FFKYH.DROID",
+      "reportedLiquidityUsd": 6381.10828561661,
+      "baseVolume24h": 0.00011055,
+      "lastTradeTime": "2026-09-23T02:53:18.000Z",
+      "lastTradeAgeHours": 6.24,
+      "reportedBidAskSpreadBps": null
+    },
+    {
+      "poolId": "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-dog-v-1-1",
+      "pair": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token / SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-DOG",
+      "reportedLiquidityUsd": 4731.150338607713,
+      "baseVolume24h": 0.0004303,
+      "lastTradeTime": "2026-09-23T02:18:26.000Z",
+      "lastTradeAgeHours": 6.82,
+      "reportedBidAskSpreadBps": null
+    },
+    {
+      "poolId": "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-liq-v-1-1",
+      "pair": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token / SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-LIQ",
+      "reportedLiquidityUsd": 222.5804824649652,
+      "baseVolume24h": 0,
+      "lastTradeTime": "2026-09-17T06:31:44.000Z",
+      "lastTradeAgeHours": 146.6,
+      "reportedBidAskSpreadBps": null
+    },
+    {
+      "poolId": "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-bdc-v-1-1",
+      "pair": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token / SP14NS8MVBRHXMM96BQY0727AJ59SWPV7RMHC0NCG.pontis-bridge-BDC",
+      "reportedLiquidityUsd": 186.37132972446346,
+      "baseVolume24h": 0.00000111,
+      "lastTradeTime": "2026-09-21T23:25:56.000Z",
+      "lastTradeAgeHours": 33.7,
+      "reportedBidAskSpreadBps": null
+    },
+    {
+      "poolId": "SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.xyk-pool-sbtc-bsd-v-1-1",
+      "pair": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token / SPYY08XK8YG4W9B1WSYBM8HD0WBQ1E1WRXEGSENS.bsd-token",
+      "reportedLiquidityUsd": 26.54964065881244,
+      "baseVolume24h": 0,
+      "lastTradeTime": "2026-09-17T03:58:39.000Z",
+      "lastTradeAgeHours": 149.15,
+      "reportedBidAskSpreadBps": null
+    }
+  ],
+  "interpretation": "Provider-reported ticker liquidity is not executable depth, an audit, or a profit measure. Pools may use different quote assets. Missing bid/ask or trade timestamps are left null; staleness matters."
+}

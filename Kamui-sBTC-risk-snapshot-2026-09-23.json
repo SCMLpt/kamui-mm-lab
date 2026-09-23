@@ -1,0 +1,78 @@
+{
+  "source": "Hiro Stacks Blockchain API v3, mainnet",
+  "endpoint": "https://api.hiro.so/extended/v3/tokens/ft/SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token%3A%3Asbtc-token",
+  "startedAt": "2026-09-23T08:57:21.248Z",
+  "completedAt": "2026-09-23T08:57:23.085Z",
+  "asset": "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token::sbtc-token",
+  "totalSupplyBaseUnits": "247851335311",
+  "reportedHolderCount": 7693,
+  "sampledHolderCount": 100,
+  "sampledSharePct": 99.21,
+  "top1SharePct": 32.63,
+  "top10SharePct": 92.82,
+  "top25SharePct": 96.9,
+  "sampledContractPrincipalCount": 19,
+  "topHolders": [
+    {
+      "principal": "SM2RRFN4HXTS7EYP8MHHYKSTG118S3HKGDV8AB8M1",
+      "balanceBaseUnits": "80873915755",
+      "sharePct": 32.63,
+      "isContractPrincipal": false
+    },
+    {
+      "principal": "SP1A27KFY4XERQCCRCARCYD1CC5N7M6688BSYADJ7.v0-vault-sbtc",
+      "balanceBaseUnits": "58831215451",
+      "sharePct": 23.74,
+      "isContractPrincipal": true
+    },
+    {
+      "principal": "SM2Z9WP72H616Y6YT8CQYX5XVDZ7AGCXXSMDDSJ96",
+      "balanceBaseUnits": "53113390760",
+      "sharePct": 21.43,
+      "isContractPrincipal": false
+    },
+    {
+      "principal": "SP000000000000000000002Q6VF78.pox-5",
+      "balanceBaseUnits": "16421563879",
+      "sharePct": 6.63,
+      "isContractPrincipal": true
+    },
+    {
+      "principal": "SP1S1HSFH0SQQGWKB69EYFNY0B1MHRMGXR3J1FH4D.reserve-hbtc-v1",
+      "balanceBaseUnits": "4692264563",
+      "sharePct": 1.89,
+      "isContractPrincipal": true
+    },
+    {
+      "principal": "SM3WXM7T41Q3WD7A1JW9RW31VHG2PA9PJTQCMPBX7",
+      "balanceBaseUnits": "4233262832",
+      "sharePct": 1.71,
+      "isContractPrincipal": false
+    },
+    {
+      "principal": "SP2C7BCAP2NH3EYWCCVHJ6K0DMZBXDFKQ56KR7QN2",
+      "balanceBaseUnits": "4085359507",
+      "sharePct": 1.65,
+      "isContractPrincipal": false
+    },
+    {
+      "principal": "SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.state-v1",
+      "balanceBaseUnits": "3616973823",
+      "sharePct": 1.46,
+      "isContractPrincipal": true
+    },
+    {
+      "principal": "SP8YMPEBK0P9W3SYCAEB1M1XJFEJTP08RWG4G16E",
+      "balanceBaseUnits": "2129624652",
+      "sharePct": 0.86,
+      "isContractPrincipal": false
+    },
+    {
+      "principal": "SP2H60PCND4AYPJEJDF7KCKJP8HZEVVKAXPNHT505",
+      "balanceBaseUnits": "2049988174",
+      "sharePct": 0.83,
+      "isContractPrincipal": false
+    }
+  ],
+  "interpretation": "Raw on-chain principal balances only. Custodial and contract principals may aggregate many beneficial owners; these shares do not measure DEX liquidity, trading performance, or market manipulation."
+}
