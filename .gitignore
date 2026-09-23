@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+devpost/learner-profile.md
+node_modules/
+.DS_Store
+*.webm
+*.mp4
+.agents/
+.claude/
+agent/

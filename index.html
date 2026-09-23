@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d0e">
+  <title>Kamui MM Lab — Capital-aware market making, simulated</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="top-rule"></div>
+  <header class="site-header shell">
+    <div class="brand"><span class="brand-symbol">K<span class="brand-dot">.</span></span><span class="brand-name">KAMUI <b>MM LAB</b></span></div>
+    <div class="header-right"><span class="pulse"></span><span>RESEARCH MODE</span><span class="header-divider"></span><span>v0.1 / LOCAL</span></div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow"><span class="small-square"></span> A PROPOSED FUTURE FEATURE FOR KAMUI <span class="eyebrow-line"></span> SYNTHETIC DEMO</div>
+      <div class="hero-grid">
+        <div>
+          <h1>MAKE MARKETS.<br><em>PROTECT CAPITAL.</em></h1>
+          <p class="hero-copy">What could a small-budget market maker do if every quote had to respect the balance sheet? Test learned signals, inventory-aware pricing, and automatic risk stops on generated markets.</p>
+          <div class="hero-note"><span class="note-icon">!</span><span>Simulation only. No real orders, funds, or exchange data. Results are hypothetical and are not a profit forecast.</span></div>
+        </div>
+        <div class="hero-aside"><span class="vertical-line"></span><div class="aside-kicker">THE THESIS</div><div class="aside-statement">THE EDGE IS IN<br>CAPITAL DISCIPLINE<span class="lime-dot">.</span></div><div class="aside-foot">A small balance sheet needs smarter limits, not bigger promises.</div></div>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Simulation workspace">
+      <aside class="controls panel">
+        <div class="panel-heading"><span>01 / CONFIGURE</span><span class="panel-cross">✳</span></div>
+        <h2>Set the constraints.</h2>
+        <p class="subtext">Change the budget or a risk gate, then replay the exact same generated market.</p>
+
+        <fieldset class="scenario-field">
+          <legend>MARKET SCENARIO</legend>
+          <div class="segmented" role="group" aria-label="Synthetic market scenario">
+            <button class="scenario active" data-scenario="range" type="button">RANGE</button>
+            <button class="scenario" data-scenario="trend" type="button">TREND</button>
+            <button class="scenario" data-scenario="shock" type="button">SHOCK</button>
+          </div>
+          <div id="scenario-hint" class="scenario-hint">Sideways prices · moderate flow</div>
+        </fieldset>
+
+        <div class="control-group">
+          <label for="capital"><span>STARTING CAPITAL</span><strong id="capital-display">$750</strong></label>
+          <input id="capital" type="range" min="100" max="5000" step="50" value="750">
+          <div class="range-ends"><span>$100</span><span>$5,000</span></div>
+        </div>
+        <div class="control-group">
+          <label for="inventory"><span>INVENTORY CAP</span><strong id="inventory-display">45%</strong></label>
+          <input id="inventory" type="range" min="10" max="80" step="5" value="45">
+          <div class="range-ends"><span>10% of budget</span><span>80%</span></div>
+        </div>
+        <div class="control-group">
+          <label for="volatility"><span>VOLATILITY STOP</span><strong id="volatility-display">18 bps</strong></label>
+          <input id="volatility" type="range" min="8" max="50" step="2" value="18">
+          <div class="range-ends"><span>8 bps</span><span>50 bps</span></div>
+        </div>
+
+        <button id="run" class="run-button" type="button"><span>RUN SIMULATION</span><span aria-hidden="true">↗</span></button>
+        <div class="run-foot">240 synthetic steps <span>·</span> Fixed seed <span>·</span> 1 bp assumed fee / fill</div>
+      </aside>
+
+      <section class="dashboard panel" aria-live="polite">
+        <div class="panel-heading"><span>02 / ANALYZE</span><span class="model-badge">LEARNED SIGNAL + HARD LIMITS</span></div>
+        <div class="dashboard-head"><div><span class="data-label">SIMULATION RESULT / <span id="scenario-label">RANGE</span></span><h2>Capital under control.</h2></div><div class="status-wrap"><span class="status-dot"></span><span id="status">QUOTES ACTIVE</span></div></div>
+
+        <div class="metrics">
+          <div class="metric"><span class="metric-label">FINAL EQUITY</span><strong id="equity-value">—</strong><small id="equity-delta">vs starting capital</small></div>
+          <div class="metric"><span class="metric-label">MAX DRAWDOWN</span><strong id="drawdown-value">—</strong><small>peak to trough</small></div>
+          <div class="metric"><span class="metric-label">QUOTES PAUSED</span><strong id="paused-value">—</strong><small>of 240 steps</small></div>
+          <div class="metric"><span class="metric-label">FILLS</span><strong id="fills-value">—</strong><small>synthetic executions</small></div>
+        </div>
+
+        <div class="chart-heading"><div><span class="data-label">EQUITY PATH</span><span class="chart-sub">MARKED TO SYNTHETIC MID-PRICE</span></div><div class="legend"><span><i class="legend-kamui"></i> Risk-aware</span><span><i class="legend-fixed"></i> Fixed quote</span></div></div>
+        <svg id="equity-chart" class="equity-chart" viewBox="0 0 720 220" preserveAspectRatio="none" role="img" aria-label="Synthetic equity chart"></svg>
+        <div class="chart-axis"><span>STEP 0</span><span>STEP 120</span><span>STEP 240</span></div>
+
+        <div class="dashboard-bottom">
+          <div class="signal-card"><div class="card-title"><span>MODEL SIGNAL</span><span class="signal-icon">◌</span></div><strong id="signal-value">—</strong><p>Predicted next synthetic mid move at the final tick. Trained on generated order-book features, never real prices.</p><div class="card-meta"><span>HOLDOUT ERROR</span><b id="model-error">—</b></div></div>
+          <div class="capital-card"><div class="card-title"><span>CAPITAL FOOTPRINT</span><span class="capital-icon">▧</span></div><div class="capital-bar"><span id="inventory-bar"></span></div><div class="capital-figures"><div><span>PEAK INVENTORY</span><b id="peak-inventory">—</b></div><div><span>CAP</span><b id="inventory-cap">—</b></div></div><p>Buy quotes stop when inventory reaches the configured capital limit.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="explain panel">
+      <div class="panel-heading"><span>03 / WHAT THE ENGINE DID</span><span>OPEN LOGIC</span></div>
+      <div class="explain-grid"><div><h2>No black-box returns.</h2><p>Quotes lean away from inventory. A small trained model changes the fair value estimate. The volatility stop overrides both. Compare the same synthetic path to a fixed-quote reference.</p></div><div class="event-list"><div class="event-heading"><span>RECENT SIMULATED EVENTS</span><span id="event-count">—</span></div><div id="events"></div></div></div>
+    </section>
+  </main>
+
+  <footer class="shell footer"><div>KAMUI MM LAB <span>↗</span> EXPERIMENT 001</div><div>HYPOTHETICAL RESEARCH TOOL · NO LIVE EXECUTION</div></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
